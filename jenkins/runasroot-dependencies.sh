@@ -11,8 +11,10 @@ apt-get update && apt-get install -y --no-install-recommends \
 
 # # Upgrade, install nodejs, yarn (in the RVM context)
 apt-get upgrade -y --no-install-recommends
-curl -sL https://deb.nodesource.com/setup_14.x | bash -
-curl -o- -L https://yarnpkg.com/install.sh | bash
+## nodejs, yarn are both provided by the ruby3 support upstream:
+## docker-rvm-support/Dockerfile.ruby3
+# curl -sL https://deb.nodesource.com/setup_14.x | bash -
+# curl -o- -L https://yarnpkg.com/install.sh | bash
 
 # Clean up
 apt-get clean
