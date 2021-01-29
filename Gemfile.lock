@@ -1,12 +1,14 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    rake (13.0.3)
     rugged (1.1.0)
 
 PLATFORMS
   x86_64-darwin-19
 
 DEPENDENCIES
+  rake (~> 13.0)
   rugged (~> 1.1)
 
 RUBY VERSION
