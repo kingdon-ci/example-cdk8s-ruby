@@ -5,7 +5,7 @@ dockerRepoProj = 'cdk-gitpusher'
 
 // these refer to a Jenkins secret (by secret "id"), can be in Jenkins global scope:
 jenkinsDockerSecret = 'docker-registry-kingdonb'
-jenkinsSshSecret    = 'jenkins-ssh'
+jenkinsSshSecret    = 'flux-ssh-deploy'
 
 // blank values that are filled in by pipeline steps below:
 gitCommit = ''
