@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+spec:
+  volumes:
+  - name: jenkins-docker-sock
+    hostPath:
+      path: /var/run/docker.sock
+  containers:
+  - name: docker
+    image: docker.io/docker:git
+    volumeMounts:
+    - mountPath: /var/run/docker.sock
+      name: jenkins-docker-sock
+    command:
+    - cat
+    resources:
+      requests:
+        memory: 512Mi
+        cpu: 50m
+      limits:
+        memory: 2Gi
+        cpu: 1
+    tty: true

@@ -7,9 +7,6 @@ apt-get update
 apt-get install -y \
   netcat-openbsd \
   build-essential \
-  # xvfb \
-  # libqt5webkit5-dev \
-  # qt5-default \
   libpq-dev \
   libyaml-dev \
   libreadline6-dev \
@@ -23,6 +20,9 @@ apt-get install -y \
   libffi-dev \
   imagemagick \
   wget
+  # xvfb \
+  # libqt5webkit5-dev \
+  # qt5-default \
   # libxss1 \
   # libappindicator3-1 \
   # libindicator7 \

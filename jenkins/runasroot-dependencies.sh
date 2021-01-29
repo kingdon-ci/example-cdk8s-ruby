@@ -7,7 +7,7 @@ set -euo pipefail
 apt-get update && apt-get install -y --no-install-recommends \
   manpages vim \
   build-essential rsync \
-  tzdata
+  tzdata cmake pkg-config
 
 # # Upgrade, install nodejs, yarn (in the RVM context)
 apt-get upgrade -y --no-install-recommends
