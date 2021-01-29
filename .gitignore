@@ -1,0 +1,9 @@
+log/*.log
+*.pid
+.env*
+
+# Kubernetes YAML files
+myapp-dev-ing.yaml
+myapp-secret-dev.yaml
+myapp-test-ing.yaml
+myapp-secret-test.yaml
