@@ -20,3 +20,6 @@ myapp-dev-ing.yaml
 myapp-secret-dev.yaml
 myapp-test-ing.yaml
 myapp-secret-staging.yaml
+synths/imports
+synths/dist
+synths/node_modules
