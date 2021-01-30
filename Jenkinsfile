@@ -73,12 +73,27 @@ pipeline {
                 apiVersion: v1
                 kind: Pod
                 spec:
+                  volumes:
+                  - name: ssh-deploy-key
+                    secret:
+                      secretName: flux-synths-writer-ssh
+                  nodeSelector:
+                    jenkins.teamhephy.info/dockerbuilder: ruby
+                  tolerations:
+                  - key: jenkins.teamhephy.info/dockerbuilder
+                    operator: Equal
+                    value: ruby
+                    effect: NoSchedule
                   containers:
                   - name: test
                     image: ${dockerRepoHost}/${dockerRepoUser}/${dockerRepoProj}:jenkins_${gitCommit}
                     imagePullPolicy: Never
                     securityContext:
                       runAsUser: 1000
+                    volumeMounts:
+                    - name: ssh-deploy-key
+                      readOnly: true
+                      mountPath: "/home/jenkins/.ssh"
                     command:
                     - cat
                     resources:
@@ -98,7 +113,7 @@ pipeline {
             // to run with user 1000, NB. this is a hard requirement of Jenkins,
             // (this is not a requirement of docker or rvm-docker-support)
             container('test') {
-              sh (script: "cd /home/rvm/app && ./jenkins/rake-ci.sh")
+              sh (script: "cd /home/rvm/app && GIT_COMMIT=${gitCommit} ssh-agent ./jenkins/rake-ci.sh")
             }
           }
         }
