@@ -16,3 +16,4 @@ synths/node_modules
 !synths/jest.config.js
 synths/*.js
 synths/*.d.ts
+synths/__snapshots__/*.test.ts.snap
