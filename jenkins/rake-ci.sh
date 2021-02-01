@@ -21,11 +21,12 @@ set -x
 # # rsync -a --delete ../.git/ git-dist/.git
 # cd git-dist
 
-eval `ssh-agent`; ssh-add ~/.ssh/id_ed25519_flux
+ sleep 6000
+# eval `ssh-agent`; ssh-add ~/.ssh/id_ed25519_flux
 
-git clone git@github.com:kingdonb/example-cdk8s-ruby.git -b synths
+# git clone git@github.com:kingdonb/example-cdk8s-ruby.git -b synths
 
-sleep 6000
+ sleep 6000
 
 # prune (dist is only generating one file anyway)
 git fetch
