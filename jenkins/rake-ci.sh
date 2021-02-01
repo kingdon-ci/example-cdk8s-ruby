@@ -24,7 +24,7 @@ git add synths.k8s.yaml
 git config --global user.email "kingdon-ci@nerdland.info"
 git config --global user.name "kingdon-ci Robot (Jenkins)"
 git commit -m"built synth.k8s from $GIT_COMMIT" synths.k8s.yaml
- sleep 6000
+# sleep 6000
 git push origin synths
 
 # all done
