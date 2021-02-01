@@ -16,21 +16,11 @@ set -euo pipefail
 # verbose
 set -x
 
-# # harvest .git for use with synths/dist content
-# mkdir git-dist
-# # rsync -a --delete ../.git/ git-dist/.git
-# cd git-dist
-
- sleep 6000
-# eval `ssh-agent`; ssh-add ~/.ssh/id_ed25519_flux
-
-# git clone git@github.com:kingdonb/example-cdk8s-ruby.git -b synths
-
- sleep 6000
+ssh-add ~/.ssh/id_ed25519_flux
+git clone git@github.com:kingdonb/example-cdk8s-ruby.git -b synths git-dist
+cd git-dist
 
 # prune (dist is only generating one file anyway)
-git fetch
-git checkout --track origin/synths
 mv -f ../dist/synths.k8s.yaml ./
 
 # generate a new commit on synths branch and push

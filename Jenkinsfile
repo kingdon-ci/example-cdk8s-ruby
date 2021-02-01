@@ -113,7 +113,7 @@ pipeline {
             // to run with user 1000, NB. this is a hard requirement of Jenkins,
             // (this is not a requirement of docker or rvm-docker-support)
             container('test') {
-              sh (script: "cd /home/rvm/app && GIT_COMMIT=${gitCommit} ./jenkins/rake-ci.sh")
+              sh (script: "cd /home/rvm/app && GIT_COMMIT=${gitCommit} ssh-agent ./jenkins/rake-ci.sh")
             }
           }
         }
