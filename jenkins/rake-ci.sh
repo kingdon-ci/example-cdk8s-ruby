@@ -23,6 +23,7 @@ mv -f ../dist/synths.k8s.yaml ./
 
 sleep 6000 
 # generate a new commit on synths branch and push
+git add synths.k8s.yaml
 git commit -m"built synth.k8s from $GIT_COMMIT" synths.k8s.yaml
 git push origin synths
 
