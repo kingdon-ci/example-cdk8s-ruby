@@ -41,5 +41,5 @@ export class MyChart extends Chart {
 }
 
 const app = new App();
-new MyChart(app, 'synths');
+new MyChart(app, 'synths', {namespace: 'default'});
 app.synth();
