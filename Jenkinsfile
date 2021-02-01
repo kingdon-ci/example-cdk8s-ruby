@@ -73,6 +73,10 @@ pipeline {
                 apiVersion: v1
                 kind: Pod
                 spec:
+                  volumes:
+                  - name: ssh-deploy-key
+                    secret:
+                      secretName: flux-synths-writer-ssh
                   nodeSelector:
                     jenkins.teamhephy.info/dockerbuilder: ruby
                   tolerations:
@@ -87,7 +91,7 @@ pipeline {
                     securityContext:
                       runAsUser: 1000
                     volumeMounts:
-                    - name: flux-synths-writer-ssh
+                    - name: ssh-deploy-key
                       readOnly: true
                       mountPath: "/home/jenkins/.ssh"
                     command:
@@ -109,7 +113,7 @@ pipeline {
             // to run with user 1000, NB. this is a hard requirement of Jenkins,
             // (this is not a requirement of docker or rvm-docker-support)
             container('test') {
-              sh (script: "cd /home/rvm/app && GIT_COMMIT=${gitCommit} ./jenkins/rake-ci.sh")
+              sh (script: "cd /home/rvm/app && GIT_COMMIT=${gitCommit} ssh-agent ./jenkins/rake-ci.sh")
             }
           }
         }
