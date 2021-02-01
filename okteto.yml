@@ -11,5 +11,3 @@ securityContext:
   runAsUser: 999
   runAsGroup: 1000
   fsGroup: 1000
-annotations:
-  fluxcd.io/ignore: "true"
