@@ -1,5 +1,8 @@
 #!/bin/bash
 
+GIT_REPO=git@github.com:kingdonb/example-cdk8s-ruby.git
+# GIT_REPO=https://github.com/kingdon-ci/example-cdk8s-ruby
+
 # run cdk8s to hydrate yamls in dist/
 pushd synths
 npm install
@@ -9,7 +12,7 @@ cdk8s synth
 set -x
 
 ssh-add ~/.ssh/id_ed25519_flux
-git clone git@github.com:kingdonb/example-cdk8s-ruby.git -b synths git-dist
+git clone $GIT_REPO -b synths git-dist
 cd git-dist
 
 # prune (dist is only generating one file anyway)
