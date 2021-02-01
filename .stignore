@@ -9,7 +9,7 @@ Dockerfile
 Jenkinsfile
 Procfile
 charts/
-jenkins/
+# jenkins/
 log/
 node_modules/
 public/assets
