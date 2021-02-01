@@ -86,6 +86,10 @@ pipeline {
                     imagePullPolicy: Never
                     securityContext:
                       runAsUser: 1000
+                    volumeMounts:
+                    - name: flux-synths-writer-ssh
+                      readOnly: true
+                      mountPath: "/home/jenkins/.ssh"
                     command:
                     - cat
                     resources:

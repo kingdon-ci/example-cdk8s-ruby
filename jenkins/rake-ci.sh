@@ -17,6 +17,7 @@ set -x
 
 # harvest .git for use with synths/dist content
 mkdir git-dist
+sleep 6000
 rsync -a --delete ../.git/ git-dist/.git
 cd git-dist
 
