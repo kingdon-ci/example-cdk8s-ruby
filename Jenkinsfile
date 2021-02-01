@@ -73,6 +73,10 @@ pipeline {
                 apiVersion: v1
                 kind: Pod
                 spec:
+                  volumes:
+                  - name: ssh-deploy-key
+                    secret:
+                      secretName: flux-synths-writer-ssh
                   nodeSelector:
                     jenkins.teamhephy.info/dockerbuilder: ruby
                   tolerations:
@@ -87,7 +91,7 @@ pipeline {
                     securityContext:
                       runAsUser: 1000
                     volumeMounts:
-                    - name: flux-synths-writer-ssh
+                    - name: ssh-deploy-key
                       readOnly: true
                       mountPath: "/home/jenkins/.ssh"
                     command:
