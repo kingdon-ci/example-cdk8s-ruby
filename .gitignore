@@ -7,3 +7,13 @@ myapp-dev-ing.yaml
 myapp-secret-dev.yaml
 myapp-test-ing.yaml
 myapp-secret-test.yaml
+
+# synths/imports
+synths/imports/*.js
+synths/imports/*.d.ts
+synths/dist
+synths/node_modules
+!synths/jest.config.js
+synths/*.js
+synths/*.d.ts
+synths/__snapshots__/*.test.ts.snap
