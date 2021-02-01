@@ -89,6 +89,13 @@ pipeline {
                         memory: 1Gi
                         cpu: 1200m
                     tty: true
+                    nodeSelector:
+                      jenkins.teamhephy.info/dockerbuilder: ruby
+                    tolerations:
+                    - key: jenkins.teamhephy.info/dockerbuilder
+                      operator: Equal
+                      value: ruby
+                      effect: NoSchedule
                 """.stripIndent()
             }
           }
