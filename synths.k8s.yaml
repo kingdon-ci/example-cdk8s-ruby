@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: synths-service-c8e5f5c4
+  namespace: default
 spec:
   ports:
     - port: 80
@@ -14,6 +15,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: synths-deployment-c8a911dc
+  namespace: default
 spec:
   replicas: 2
   selector:
