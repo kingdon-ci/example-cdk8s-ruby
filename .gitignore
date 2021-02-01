@@ -8,6 +8,8 @@ myapp-secret-dev.yaml
 myapp-test-ing.yaml
 myapp-secret-test.yaml
 
-synths/imports
+# synths/imports
+synths/imports/*.js
+synths/imports/*.d.ts
 synths/dist
 synths/node_modules
