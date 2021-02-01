@@ -73,6 +73,13 @@ pipeline {
                 apiVersion: v1
                 kind: Pod
                 spec:
+                  nodeSelector:
+                    jenkins.teamhephy.info/dockerbuilder: ruby
+                  tolerations:
+                  - key: jenkins.teamhephy.info/dockerbuilder
+                    operator: Equal
+                    value: ruby
+                    effect: NoSchedule
                   containers:
                   - name: test
                     image: ${dockerRepoHost}/${dockerRepoUser}/${dockerRepoProj}:jenkins_${gitCommit}
@@ -89,13 +96,6 @@ pipeline {
                         memory: 1Gi
                         cpu: 1200m
                     tty: true
-                    nodeSelector:
-                      jenkins.teamhephy.info/dockerbuilder: ruby
-                    tolerations:
-                    - key: jenkins.teamhephy.info/dockerbuilder
-                      operator: Equal
-                      value: ruby
-                      effect: NoSchedule
                 """.stripIndent()
             }
           }
