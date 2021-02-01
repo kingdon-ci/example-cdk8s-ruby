@@ -21,3 +21,10 @@ spec:
         memory: 2Gi
         cpu: 1
     tty: true
+  nodeSelector:
+    jenkins.teamhephy.info/dockerbuilder: ruby
+  tolerations:
+  - key: jenkins.teamhephy.info/dockerbuilder
+    operator: Equal
+    value: ruby
+    effect: NoSchedule
