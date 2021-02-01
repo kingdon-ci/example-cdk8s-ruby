@@ -13,3 +13,6 @@ synths/imports/*.js
 synths/imports/*.d.ts
 synths/dist
 synths/node_modules
+!synths/jest.config.js
+synths/*.js
+synths/*.d.ts
