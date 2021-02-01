@@ -6,6 +6,7 @@ GIT_REPO=git@github.com:kingdonb/example-cdk8s-ruby.git
 # run cdk8s to hydrate yamls in dist/
 pushd synths
 npm install
+cdk8s import k8s
 cdk8s synth
 
 # verbose

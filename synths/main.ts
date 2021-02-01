@@ -1,6 +1,8 @@
 import { Construct } from 'constructs';
 import { App, Chart, ChartProps } from 'cdk8s';
 
+import { KubeDeployment, KubeService, IntOrString } from './imports/k8s';
+
 export class MyChart extends Chart {
   constructor(scope: Construct, id: string, props: ChartProps = { }) {
     super(scope, id, props);
