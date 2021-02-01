@@ -16,7 +16,8 @@ apt-get upgrade -y --no-install-recommends
 # curl -sL https://deb.nodesource.com/setup_14.x | bash -
 # curl -o- -L https://yarnpkg.com/install.sh | bash
 
-yarn global add cdk8s-cli
+npm install -g cdk8s-cli
+# yarn global add cdk8s-cli
 
 # Clean up
 apt-get clean
