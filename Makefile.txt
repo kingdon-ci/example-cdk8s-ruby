@@ -1,9 +1,0 @@
-DOCKER_REPO_PROJ := cdk-gitpusher
-
-.PHONY: build
-GIT_COMMIT := $(shell git rev-parse --short=8 HEAD)
-
-build:
-	DOCKER_REPO_PROJ=$(DOCKER_REPO_PROJ) \
-	DOCKER_REPO_USER=kingdonb DOCKER_REPO_HOST=docker.io \
-		GIT_COMMIT=$(GIT_COMMIT) ./jenkins/docker-build.sh
