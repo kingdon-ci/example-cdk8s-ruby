@@ -1,0 +1,28 @@
+name: Build cdk8s
+on: push
+
+jobs:
+  run:
+    name: synth gen
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '15'
+
+      - name: Set up cdk8s cli
+        run: ./scripts/install_cdk8s.sh
+
+      - name: Run tests, regenerate manifest
+        run: ./jenkins/rake-ci.sh
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v7
+        with:
+          add: 'synths.k8s.yaml'
+          branch: synths
+          message: update synths
+          signoff: true
