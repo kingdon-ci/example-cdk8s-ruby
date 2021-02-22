@@ -1,8 +1,5 @@
 #!/bin/bash
 
-GIT_REPO=git@github.com:kingdonb/example-cdk8s-ruby.git
-# GIT_REPO=https://github.com/kingdon-ci/example-cdk8s-ruby
-
 # run cdk8s to hydrate yamls in dist/ (... first, setup)
 pushd synths
 npm install
