@@ -4,8 +4,8 @@ dockerRepoUser = 'kingdonb' // (this User must match the value in jenkinsDockerS
 dockerRepoProj = 'cdk-gitpusher'
 
 // these refer to a Jenkins secret (by secret "id"), can be in Jenkins global scope:
-jenkinsDockerSecret = 'docker-registry-kingdonb'
-jenkinsSshSecret    = 'flux-ssh-deploy'
+jenkinsDockerSecret = '3c645248-ba9d-4600-80f7-b90999eadb13'
+jenkinsSshSecret    = '1959d41b-760f-4861-82a8-ed0be238e1c2'
 
 // blank values that are filled in by pipeline steps below:
 gitCommit = ''
